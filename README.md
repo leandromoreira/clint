@@ -1,0 +1,4 @@
+clint
+=====
+
+An ordinary encoder.
