@@ -102,28 +102,30 @@
           <div class="control-group">
               <span class="control-label title-group">Bitrate</span>
               <div class="controls form-inline padding-top-group-title">
-                <select class="input-mini">
-                  <option>50</option>
-                  <option>100</option>
-                  <option>150</option>
-                  <option>200</option>
-                  <option>250</option>
-                  <option>300</option>
-                  <option>350</option>
-                  <option>650</option>
-                  <option>950</option>
-                  <option>1050</option>
-                </select>
-                <span>Kbps</span>
-                &nbsp;
-                &nbsp;
-                <input class="input-mini" placeholder="1080"></input>
-                &nbsp;X&nbsp;
-                <input class="input-mini" placeholder="720"></input>
-                &nbsp;
-                &nbsp;
-                <button class="btn btn-success">Add+</button>
+                <button class="btn btn-success" data-bind="click: addBitrate">Add</button>
 
+                <table>
+                  <thead>
+                      <tr>
+                        <th>Kbps</th><th>Width</th><th>Height</th><th></th>
+                      </tr>
+                  </thead>
+                    <tbody data-bind="foreach: bitrates">
+                      <tr>
+                        <td>
+                          <select class="input-mini" data-bind="options: $root.kbpsAvailable, value: kbps ">
+                          </select>
+                          <span>Kbps</span>
+                        </td>
+                        <td>
+                          <input class="input-mini" placeholder="1080"></input>
+                        </td>
+                        <td>
+                          <input class="input-mini" placeholder="720"></input>
+                        </td>
+                      </tr>
+                    </tbody>
+                </table>
               </div>
           </div>
         </fieldset>

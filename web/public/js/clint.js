@@ -18,6 +18,12 @@ function AppViewModel() {
     self.audioFormats = ko.observableArray(['AAC']);
     self.audioFormat  = ko.observable("");
     self.bitrates    = ko.observableArray([]);
+    self.kbpsAvailable = ["100", "150", "200", "250", "300", "350", "400", "450", "500", "700", "900", "1208"];
+
+    self.addBitrate = function(argument) {
+     self.bitrates.push(new Bitrate(self.kbpsAvailable[0], "", ""));
+    }
+
     self.rtmpAddress = "";
     self.streamName  = "";
 
