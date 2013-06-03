@@ -45,6 +45,16 @@
         margin: 20px 0;
       }
 
+      .title-group {
+        color: #585858;
+        font-size: 18px;
+        font-weight: bold;
+      }
+
+      .padding-top-group-title{
+        padding-top: 10px;
+      }
+
     </style>
     <link href="css/bootstrap-responsive.css" rel="stylesheet">
   </head>
@@ -54,24 +64,76 @@
       <!-- Begin page content -->
       <div class="container">
         <div class="page-header">
-          <h1> ✰ Clint Enconder ✰ </h1>
+          <h1> ✰ CLEN - Clint Enconder ✰ </h1>
         </div>
-        <p class="lead">
-          The open source encoder strongly based on FFmpeg.
-        </p>
         <fieldset>
           <legend>▶ Setup Input</legend>
-          <label for="device">Device</label>
-          <select>
-            <option>/dev/video0</option>
-            <option>File</option>
-          </select>
 
-          <label for="device">Format</label>
-          <select>
-            <option>H.264</option>
-          </select>
+          <div class="control-group">
+              <span class="control-label title-group">Device input</span>
+              <div class="controls form-inline padding-top-group-title">
+                  <label for="video-input">Video</label>
+                  <select id="video-input" class="input-medium">
+                    <option>/dev/video0</option>
+                    <option>File</option>
+                  </select>
+                  &nbsp;
+                  <button class="btn btn-info">Preview</button>
+                  &nbsp;
+                  &nbsp;
+                  <label for="audio-input">Audio</label>
+                  <select id="audio-input" class="input-medium">
+                    <option>/dev/pcm0</option>
+                    <option>File</option>
+                  </select>
+              </div>
+          </div>
+
+          <div class="control-group">
+              <span class="control-label title-group">Format</span>
+              <div class="controls form-inline padding-top-group-title">
+                  <label for="video-format">Video</label>
+                  <select id="video-format" class="input-small">
+                    <option>H.264</option>
+                  </select>
+                  &nbsp;
+                  &nbsp;
+                  <label for="audio-format">Audio</label>
+                  <select id="audio-format" class="input-small">
+                    <option>AAC</option>
+                  </select>
+              </div>
+          </div>
+
+          <div class="control-group">
+              <span class="control-label title-group">Bitrate</span>
+              <div class="controls form-inline padding-top-group-title">
+                <select class="input-mini">
+                  <option>50</option>
+                  <option>100</option>
+                  <option>150</option>
+                  <option>200</option>
+                  <option>250</option>
+                  <option>300</option>
+                  <option>350</option>
+                  <option>650</option>
+                  <option>950</option>
+                  <option>1050</option>
+                </select>
+                <span>Kbps</span>
+                &nbsp;
+                &nbsp;
+                <input class="input-mini" placeholder="1080"></input>
+                &nbsp;X&nbsp;
+                <input class="input-mini" placeholder="720"></input>
+                &nbsp;
+                &nbsp;
+                <button class="btn btn-success">Add+</button>
+
+              </div>
+          </div>
         </fieldset>
+
         <fieldset>
           <legend>◀ Setup Outup</legend>
           <label for="rtmp-name">RTMP address</label>
@@ -84,11 +146,6 @@
       </div>
 
       <div id="push"></div>
-    </div>
-    <div id="footer">
-      <div class="container">
-        <p class="muted credit">CPU usage: 35% GPU usage: 10% Memory: 63%.</p>
-      </div>
     </div>
     <script src="js/bootstrap.js"></script>
     <script src="js/knockout-2.2.1.js"></script>
