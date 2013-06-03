@@ -5,9 +5,11 @@
     <title>Clint enconder</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="css/bootstrap.css" rel="stylesheet">
+    <link href='http://fonts.googleapis.com/css?family=Ubuntu' rel='stylesheet' type='text/css'>
     <style type="text/css">
       html,
       body {
+        font-family: 'Ubuntu', sans-serif;
         height: 100%;
       }
 
@@ -52,11 +54,33 @@
       <!-- Begin page content -->
       <div class="container">
         <div class="page-header">
-          <h1>Clint Enconder</h1>
+          <h1> ✰ Clint Enconder ✰ </h1>
         </div>
         <p class="lead">
           The open source encoder strongly based on FFmpeg.
         </p>
+        <fieldset>
+          <legend>▶ Setup Input</legend>
+          <label for="device">Device</label>
+          <select>
+            <option>/dev/video0</option>
+            <option>File</option>
+          </select>
+
+          <label for="device">Format</label>
+          <select>
+            <option>H.264</option>
+          </select>
+        </fieldset>
+        <fieldset>
+          <legend>◀ Setup Outup</legend>
+          <label for="rtmp-name">RTMP address</label>
+          <input id="rtmp-name" class="input-xxlarge" type="text" placeholder="rtmp://192.0.0.12/live"></input>
+
+          <label for="stream-name">Stream name</label>
+          <input id="stream-name" type="text" placeholder="live_event"></input>
+        </fieldset>
+        <button class="btn btn-large btn-primary">Stream</button>
       </div>
 
       <div id="push"></div>
