@@ -24,6 +24,10 @@ function AppViewModel() {
      self.bitrates.push(new Bitrate(self.kbpsAvailable[0], "", ""));
     }
 
+    self.removeBitrate = function(bitrate){
+      self.bitrates.remove(bitrate);
+    }
+
     self.rtmpAddress = "";
     self.streamName  = "";
 

@@ -113,15 +113,17 @@
                     <tbody data-bind="foreach: bitrates">
                       <tr>
                         <td>
-                          <select class="input-mini" data-bind="options: $root.kbpsAvailable, value: kbps ">
+                          <select class="input-small" data-bind="options: $root.kbpsAvailable, value: kbps ">
                           </select>
-                          <span>Kbps</span>
                         </td>
                         <td>
                           <input class="input-mini" placeholder="1080" data-bind="value: width"></input>
                         </td>
                         <td>
                           <input class="input-mini" placeholder="720" data-bind="value: height"></input>
+                        </td>
+                        <td>
+                          <button class="btn btn-danger btn-mini" data-bind="click: $root.removeBitrate">x</button>
                         </td>
                       </tr>
                     </tbody>
