@@ -28,11 +28,12 @@ function AppViewModel() {
       self.bitrates.remove(bitrate);
     }
 
-    self.rtmpAddress = "";
-    self.streamName  = "";
+    self.rtmpAddress = ko.observable("");
+    self.streamName  = ko.observable("");
 
     self.stream = function(){
-      console.log(self.bitrates());
+      console.log(self.rtmpAddress());
+      console.log(self.streamName());
     }
 }
 
