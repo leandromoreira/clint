@@ -7,9 +7,22 @@
         <div class="page-header">
           <h1> ✰ Clint Enconder ✰ </h1>
         </div>
-        <%= erb :input_encoder %>
-        <%= erb :output_encoder %>
-        <button class="btn btn-large btn-primary" data-bind="click: stream">Stream</button>
+
+        <div class="tabbable">
+          <ul class="nav nav-tabs">
+            <li class="active"><a href="#tab1" data-toggle="tab">▶ Setup Input</a></li>
+            <li><a href="#tab2" data-toggle="tab">◀ Setup Output</a></li>
+          </ul>
+          <div class="tab-content">
+            <div class="tab-pane active" id="tab1">
+              <%= erb :input_encoder %>
+            </div>
+            <div class="tab-pane" id="tab2">
+              <%= erb :output_encoder %>
+            </div>
+          </div>
+        </div>
+
       </div>
       <div id="push"></div>
     </div>
