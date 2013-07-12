@@ -18,12 +18,21 @@ function AppViewModel() {
     self.audioFormats  = ko.observableArray(['AAC']);
     self.audioFormat   = ko.observable("");
     self.bitrates      = ko.observableArray([]);
+    self.uploadEnable  = ko.observable(false);
     self.kbpsAvailable = ["100", "150", "200", "250", "300", "350", "400", "450", "500", "700", "900", "1208"];
     self.rtmpAddress = ko.observable("");
     self.streamName  = ko.observable("");
 
     self.addBitrate = function(argument) {
      self.bitrates.push(new Bitrate(self.kbpsAvailable[0], "", ""));
+    }
+
+    self.videoInputChange = function() {
+      if(self.videoInput() === 'File'){
+        self.uploadEnable(true);
+      }else{
+        self.uploadEnable(false);
+      }
     }
 
     self.removeBitrate = function(bitrate){

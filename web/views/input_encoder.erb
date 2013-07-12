@@ -1,64 +1,65 @@
-        <fieldset>
-          <legend>▶ Setup Input</legend>
+<fieldset>
+  <legend>▶ Setup Input</legend>
 
-          <div class="control-group">
-              <span class="control-label title-group">Device input</span>
-              <div class="controls form-inline padding-top-group-title">
-                  <label for="video-input">Video</label>
-                  <select id="video-input" class="input-medium" data-bind="options: videoInputs, value: videoInput">
-                  </select>
-                  &nbsp;
-                  <button class="btn btn-info">Preview</button>
-                  &nbsp;
-                  &nbsp;
-                  <label for="audio-input">Audio</label>
-                  <select id="audio-input" class="input-medium" data-bind="options: audioInputs, value: audioInput">
-                  </select>
-              </div>
-          </div>
+  <div class="control-group">
+    <span class="control-label title-group">Device input</span>
+    <div class="controls form-inline padding-top-group-title">
+      <label for="video-input">Video</label>
+      <select id="video-input" class="input-medium" data-bind="options: videoInputs, value: videoInput, event: { change: videoInputChange }">
+      </select>
+      &nbsp;
+      <button class="btn btn-info" data-bind="visible: !uploadEnable()">Preview</button>
+      &nbsp;
+      <button class="btn btn-info" data-bind="visible: uploadEnable">Upload</button>
+      &nbsp;
+      <label for="audio-input">Audio</label>
+      <select id="audio-input" class="input-medium" data-bind="options: audioInputs, value: audioInput">
+      </select>
+    </div>
+  </div>
 
-          <div class="control-group">
-              <span class="control-label title-group">Format</span>
-              <div class="controls form-inline padding-top-group-title">
-                  <label for="video-format">Video</label>
-                  <select id="video-format" class="input-small" data-bind="options: videoFormats, value: videoFormat">
-                  </select>
-                  &nbsp;
-                  &nbsp;
-                  <label for="audio-format">Audio</label>
-                  <select id="audio-format" class="input-small" data-bind="options: audioFormats, value: audioFormat">
-                  </select>
-              </div>
-          </div>
+  <div class="control-group">
+    <span class="control-label title-group">Format</span>
+    <div class="controls form-inline padding-top-group-title">
+      <label for="video-format">Video</label>
+      <select id="video-format" class="input-small" data-bind="options: videoFormats, value: videoFormat">
+      </select>
+      &nbsp;
+      &nbsp;
+      <label for="audio-format">Audio</label>
+      <select id="audio-format" class="input-small" data-bind="options: audioFormats, value: audioFormat">
+      </select>
+    </div>
+  </div>
 
-          <div class="control-group">
-            <span class="control-label title-group">Bitrate <span class="badge badge-inverse" data-bind="text: bitrates().length"></span></span>
-              <div class="controls form-inline padding-top-group-title">
-                <button class="btn btn-success" data-bind="click: addBitrate, enable: maximumOfBitrates()">Add</button>
-                <table data-bind="visible: bitrates().length">
-                  <thead>
-                      <tr>
-                        <th>Kbps</th><th>Width</th><th>Height</th><th></th>
-                      </tr>
-                  </thead>
-                    <tbody data-bind="foreach: bitrates">
-                      <tr>
-                        <td>
-                          <select class="input-small" data-bind="options: $root.kbpsAvailable, value: kbps ">
-                          </select>
-                        </td>
-                        <td>
-                          <input class="input-mini" placeholder="1080" data-bind="value: width"></input>
-                        </td>
-                        <td>
-                          <input class="input-mini" placeholder="720" data-bind="value: height"></input>
-                        </td>
-                        <td>
-                          <button class="btn btn-danger btn-mini" data-bind="click: $root.removeBitrate">x</button>
-                        </td>
-                      </tr>
-                    </tbody>
-                </table>
-              </div>
-          </div>
-        </fieldset>
+  <div class="control-group">
+    <span class="control-label title-group">Bitrate <span class="badge badge-inverse" data-bind="text: bitrates().length"></span></span>
+    <div class="controls form-inline padding-top-group-title">
+      <button class="btn btn-success" data-bind="click: addBitrate, enable: maximumOfBitrates()">Add</button>
+      <table data-bind="visible: bitrates().length">
+        <thead>
+          <tr>
+            <th>Kbps</th><th>Width</th><th>Height</th><th></th>
+          </tr>
+        </thead>
+        <tbody data-bind="foreach: bitrates">
+        <tr>
+          <td>
+            <select class="input-small" data-bind="options: $root.kbpsAvailable, value: kbps ">
+            </select>
+          </td>
+          <td>
+            <input class="input-mini" placeholder="1080" data-bind="value: width"></input>
+          </td>
+          <td>
+            <input class="input-mini" placeholder="720" data-bind="value: height"></input>
+          </td>
+          <td>
+            <button class="btn btn-danger btn-mini" data-bind="click: $root.removeBitrate">x</button>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</fieldset>
