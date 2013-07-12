@@ -45,3 +45,20 @@ body {
 .padding-top-group-title{
   padding-top: 10px;
 }
+
+.bitrates{
+  margin-top: 10px;
+}
+
+.btn-add-bitrate{
+  margin-bottom: 10px;
+}
+
+.encoder-input-controls{
+  margin-left: 15px;
+}
+
+.encoder-group-input{
+  padding-top: 20px;
+}
+
