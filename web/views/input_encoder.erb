@@ -34,7 +34,7 @@
           <div class="control-group">
             <span class="control-label title-group">Bitrate <span class="badge badge-inverse" data-bind="text: bitrates().length"></span></span>
               <div class="controls form-inline padding-top-group-title">
-                <button class="btn btn-success" data-bind="click: addBitrate">Add</button>
+                <button class="btn btn-success" data-bind="click: addBitrate, enable: maximumOfBitrates()">Add</button>
                 <table data-bind="visible: bitrates().length">
                   <thead>
                       <tr>

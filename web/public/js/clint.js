@@ -19,6 +19,8 @@ function AppViewModel() {
     self.audioFormat   = ko.observable("");
     self.bitrates      = ko.observableArray([]);
     self.kbpsAvailable = ["100", "150", "200", "250", "300", "350", "400", "450", "500", "700", "900", "1208"];
+    self.rtmpAddress = ko.observable("");
+    self.streamName  = ko.observable("");
 
     self.addBitrate = function(argument) {
      self.bitrates.push(new Bitrate(self.kbpsAvailable[0], "", ""));
@@ -28,13 +30,15 @@ function AppViewModel() {
       self.bitrates.remove(bitrate);
     }
 
-    self.rtmpAddress = ko.observable("");
-    self.streamName  = ko.observable("");
-
     self.stream = function(){
       console.log(self.rtmpAddress());
       console.log(self.streamName());
     }
+
+    self.maximumOfBitrates = function() {
+      return self.bitrates().length < 5;
+    }
 }
 
 ko.applyBindings(new AppViewModel());
+
