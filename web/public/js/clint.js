@@ -40,8 +40,8 @@ function AppViewModel() {
     }
 
     self.stream = function(){
-      console.log(self.rtmpAddress());
-      console.log(self.streamName());
+      console.debug(ko.toJSON(self));
+      alert('look in your console');
     }
 
     self.maximumOfBitrates = function() {
