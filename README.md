@@ -3,4 +3,5 @@ clint
 
 An ordinary encoder.
 
-http://i39.tinypic.com/5dmryq.png
+![Clint Encoder screenshot](http://i39.tinypic.com/5dmryq.png)
+
